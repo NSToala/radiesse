@@ -6,9 +6,12 @@ import { DcScreen } from '../components/dc/DcScreen';
 import { MarvelScreen } from '../components/marvel/MarvelScreen';
 import { SearchScreen } from '../components/search/SearchScreen';
 import { HeroScreen } from '../components/hero/HeroScreen';
+import { CourseScreen } from '../components/courses/CourseScreen';
+import { CourseItemScreen } from '../components/courses/CourseItemScreen';
 
 
 export const DashboardRoutes = () => {
+
     return (
         <>
             <Navbar />
@@ -17,6 +20,9 @@ export const DashboardRoutes = () => {
                 <Routes>
                     <Route path="marvel" element={<MarvelScreen />} />
                     <Route path="dc" element={<DcScreen />} />
+                    
+                    <Route path="courses" element={<CourseScreen />} />
+                    <Route path="courses/learn/:courseId" element={<CourseItemScreen />} />
 
                     <Route path="search" element={<SearchScreen />} />
                     <Route path="hero/:heroeId" element={<HeroScreen />} />

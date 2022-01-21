@@ -5,6 +5,7 @@ import { PublicRoute } from './PublicRoute';
 
 import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
+import { VideoScreen } from '../components/login/VideoScreen';
 
 
 
@@ -22,6 +23,12 @@ export const AppRouter = () => {
                 } 
                 />
                 
+                <Route path="/video" element={
+                    <PublicRoute>
+                        <VideoScreen />
+                    </PublicRoute>
+                } 
+                />
 
                 <Route path="/*" element={ 
                         <PrivateRoute>

@@ -4,7 +4,7 @@ import { authReducer } from './auth/authReducer';
 import { AppRouter } from './routers/AppRouter';
 
 const init = () => {
-    return JSON.parse( localStorage.getItem('user') ) || { logged: false };
+    return {token: localStorage.getItem('token'), user: JSON.parse(localStorage.getItem('user'))} || { token: '', user: '' };
 }
 
 export const HeroesApp = () => {
@@ -14,7 +14,8 @@ export const HeroesApp = () => {
     useEffect(() => {
         if ( !user ) return;
 
-        localStorage.setItem('user', JSON.stringify(user) );
+        localStorage.setItem('token', user.token );
+        localStorage.setItem('user', JSON.stringify(user.user) );
     }, [ user ])
 
 
