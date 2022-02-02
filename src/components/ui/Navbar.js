@@ -6,14 +6,10 @@ import { types } from '../../types/types';
 
 
 export const Navbar = () => {
-
     const { user, dispatch } = useContext(AuthContext)
-
     const navigate = useNavigate();
 
-
-    const handleLogout = () => {
-        
+    const handleLogout = () => {        
         dispatch({ type: types.logout });
 
         navigate('/login', {
@@ -25,16 +21,16 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             
             <Link 
-                className="navbar-brand" 
+                className="navbar-brand p-3"
                 to="/"
             >
-                Asociaciones
+                Raddiese
             </Link>
 
             <div className="navbar-collapse">
                 <div className="navbar-nav">
 
-                    <NavLink 
+                    {/* <NavLink 
                         className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
                         to="/marvel"
                     >
@@ -46,7 +42,7 @@ export const Navbar = () => {
                         to="/dc"
                     >
                         DC
-                    </NavLink>
+                    </NavLink> */}
 
                     <NavLink 
                         className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
@@ -55,12 +51,12 @@ export const Navbar = () => {
                         Courses
                     </NavLink>
 
-                    <NavLink 
+                    {/* <NavLink 
                         className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
                         to="/search"
                     >
                         Search
-                    </NavLink>
+                    </NavLink> */}
                 </div>
             </div>
 
@@ -72,7 +68,8 @@ export const Navbar = () => {
                     </span>
                     
                     <button 
-                        className="nav-item nav-link btn" 
+                        className="nav-item nav-link btn pr-5" 
+                        style={{'marginRight': '50px'}}
                         onClick={ handleLogout }
                     >
                         Logout

@@ -3,9 +3,9 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
-import { LoginScreen } from '../components/login/LoginScreen';
+import { LoginScreen } from '../components/auth/LoginScreen';
+import { SignupScreen } from '../components/auth/SignupScreen';
 import { DashboardRoutes } from './DashboardRoutes';
-import { VideoScreen } from '../components/login/VideoScreen';
 
 
 
@@ -22,14 +22,14 @@ export const AppRouter = () => {
                     </PublicRoute>
                 } 
                 />
-                
-                <Route path="/video" element={
+
+                <Route path="/signup" element={
                     <PublicRoute>
-                        <VideoScreen />
+                        <SignupScreen />
                     </PublicRoute>
                 } 
                 />
-
+                
                 <Route path="/*" element={ 
                         <PrivateRoute>
                             <DashboardRoutes />

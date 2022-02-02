@@ -10,6 +10,6 @@ export const PublicRoute = ({ children }) => {
 
     
     return user.token !== ""
-        ? <Navigate to="/marvel" />
+        ? <Navigate to="/courses" />
         : children
 }
