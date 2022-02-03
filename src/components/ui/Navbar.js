@@ -8,7 +8,7 @@ import { types } from '../../types/types';
 export const Navbar = () => {
     const { user, dispatch } = useContext(AuthContext)
     const navigate = useNavigate();
-
+    
     const handleLogout = () => {        
         dispatch({ type: types.logout });
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
             
             <Link 
                 className="navbar-brand p-3"
-                to="/"
+                to="/courses"
             >
                 Raddiese
             </Link>
@@ -30,33 +30,12 @@ export const Navbar = () => {
             <div className="navbar-collapse">
                 <div className="navbar-nav">
 
-                    {/* <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
-                        to="/marvel"
-                    >
-                        Marvel
-                    </NavLink>
-
-                    <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
-                        to="/dc"
-                    >
-                        DC
-                    </NavLink> */}
-
                     <NavLink 
                         className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
                         to="/courses"
                     >
                         Courses
                     </NavLink>
-
-                    {/* <NavLink 
-                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
-                        to="/search"
-                    >
-                        Search
-                    </NavLink> */}
                 </div>
             </div>
 
@@ -64,7 +43,7 @@ export const Navbar = () => {
                 <ul className="navbar-nav ml-auto">
 
                     <span className="nav-item nav-link text-info">
-                        { user.name }
+                        BIENVENIDO, { user.user.username }
                     </span>
                     
                     <button 
@@ -72,7 +51,7 @@ export const Navbar = () => {
                         style={{'marginRight': '50px'}}
                         onClick={ handleLogout }
                     >
-                        Logout
+                        Cerrar Sesión
                     </button>
                 </ul>
             </div>

@@ -5,34 +5,22 @@ export const CourseCard = ({_id, name, category, speaker, poster}) => {
     const path = `/${poster}`;
 
     return (
-        <div className="col animate__animated animate__fadeIn">
+        <div className="col mx-auto animate__animated animate__fadeIn">
             <div className="card">
+                <img src={ path }  className="card-img-top" alt={name} />
                 
-                <div className="row no-gutters">
-                    <div className="col-4">
-                        <img src={ path } className="card-img" alt={name} />
+                <div className="card-body">
+                    <div className="progress my-2">
+                        <div className="progress-bar bg-success" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <div className="col-8">
 
-                        <div className="card-body">
+                    <h5 className="card-title">{name}</h5>
+                    <p className="card-text">{speaker}</p>
 
-                            <h5 className="card-title">{name}</h5>
-                            <p className="card-text">{speaker}</p>
-
-                            <p className="card-text">
-                                <small className="text-muted">{ category }</small>
-                            </p>
-
-                            
-                            <Link to={`/courses/learn/${_id}`}>
-                                Más...
-                            </Link>
-
-                        </div>
-
-                    </div>
+                    <Link to={`/courses/learn/${_id}`}>
+                        Iniciar curso
+                    </Link>
                 </div>
-
             </div>
         </div>
     )

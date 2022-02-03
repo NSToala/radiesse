@@ -66,62 +66,23 @@ export const CourseItemScreen = () => {
         return <Navigate to='/' />
     }
     
-    // const {
-    //     id,
-    //     superhero,
-    //     publisher,
-    //     alter_ego,
-    //     first_appearance,
-    //     characters
-    // } = hero;
-    // const video = useRef([]);
+    // const path = `/${poster}`;
     
     return (
-        <div style={{width: '700px'}}>
-            <h1>{courseId}</h1>
-            {course.path}
-            {player.currentTime}
-            <Player autoPlay startTime={tracking.current} ref={video} src={course.path} />
-
-            <button
-                className="btn btn-outline-info"
-                onClick={ handleReturn }
-            >
-                Regresar 
-            </button>
-        </div>
+        <>
+            <div className="container">
+                <div className="text-center text-light my-2">
+                    <h1>{course.name}</h1>
+                    <button
+                        className="btn btn-outline-info mt-3 mb-2"
+                        onClick={ handleReturn }
+                    >
+                        Ir a mis cursos 
+                    </button>
+                </div>
+                
+                <Player autoPlay startTime={tracking.current} ref={video} src="/media/courses/omicron.mp4" />
+            </div>
+        </>
     )
-
-    // return (
-    //     <div className="row mt-5">
-    //         <div className="col-4">
-    //             <img 
-    //                 src={ imagePath } 
-    //                 alt={ superhero }
-    //                 className="img-thumbnail animate__animated animate__fadeInLeft"
-    //             />
-    //         </div>
-
-    //         <div className="col-8 animate__animated animate__fadeIn">
-    //             <h3>{ hero.superhero }</h3>
-    //             <ul className="list-group list-group-flush">
-    //                 <li className="list-group-item"> <b>Alter ego:</b> { alter_ego } </li>
-    //                 <li className="list-group-item"> <b>Publisher:</b> { publisher } </li>
-    //                 <li className="list-group-item"> <b>First Appearance:</b> { first_appearance } </li>
-    //             </ul>
-
-    //             <h5 className="mt-3">Characters</h5>
-    //             <p>{ characters }</p>
-
-    //             <button
-    //                 className="btn btn-outline-info"
-    //                 onClick={ handleReturn }
-    //             >
-    //                 Regresar 
-    //             </button>
-
-    //         </div>
-
-    //     </div>
-    // )
 }

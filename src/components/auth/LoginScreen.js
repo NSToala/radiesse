@@ -7,7 +7,7 @@ import { Header } from '../ui/Header'
 
 export const LoginScreen = () => {
     const [error, setError] = useState(false);
-    const [email, setEmail] = useState('edgar@trange.com');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('radiesse2021');
     
     const navigate = useNavigate();
