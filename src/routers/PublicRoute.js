@@ -12,4 +12,5 @@ export const PublicRoute = ({ children }) => {
     return user.token !== ""
         ? <Navigate to="/courses" />
         : children
+        
 }
