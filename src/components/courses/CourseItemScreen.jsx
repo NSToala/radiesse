@@ -81,7 +81,7 @@ export const CourseItemScreen = () => {
                     </button>
                 </div>
                 
-                <Player autoPlay startTime={tracking.current} ref={video} src="/media/courses/omicron.mp4" />
+                <Player autoPlay startTime={tracking.current} ref={video} src="/media/courses/eventoonline.mp4" />
             </div>
         </>
     )
