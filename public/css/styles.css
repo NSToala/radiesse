@@ -38,7 +38,7 @@ body {
   line-height: 1.5;
   color: #333;
   overflow-x: hidden;
-
+  font-family: "LatoB";
   background: url(/assets/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -754,7 +754,7 @@ a {
 .back-home {
   /* border: solid 1px; */
   text-align: center;
-  font-size: 15px;
+  font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
   height: 50px;
@@ -767,14 +767,14 @@ a {
 .back-cedula::before,
 .back-home::before {
   content: "";
-  background-image: url(/img/icons/back.png);
+  background-image: url(/assets/icons/back.png);
   background-repeat: no-repeat;
-  background-size: 32px;
-  width: 35px;
-  height: 35px;
+  background-size: 22px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  margin-left: -40px;
-  margin-top: 8px;
+  margin-left: -35px;
+  margin-top: 15px;
 }
 
 .awhats::before {

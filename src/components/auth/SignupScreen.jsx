@@ -53,13 +53,13 @@ export const SignupScreen = () => {
             
             if(users.length === 0) {
                 setError(true)
-                setIsFound(2)
+                setIsFound(3)
                 return
             }
 
             if(users.length >= 2) {
                 setData(users)
-                setIsFound(1)
+                setIsFound(2)
                 return
             }
             
@@ -69,7 +69,7 @@ export const SignupScreen = () => {
                 specialty: users[0].profesion
             }
             setUser(response)
-            setIsFound(2)
+            setIsFound(3)
         } catch (error) { console.log(error); }
     }
 
@@ -80,7 +80,7 @@ export const SignupScreen = () => {
             specialty: item.profesion
         }
         setUser(response)
-        setIsFound(2)
+        setIsFound(3)
     }
 
     useEffect(() => {
@@ -121,15 +121,12 @@ export const SignupScreen = () => {
                             {
                                 isfound === 0 && 
                                 (
-                                    <div className="step-1 mt-5">
-                                        <div className="form-register">
-                                            <form onSubmit={findCedula} autoComplete="off"> 
-                                                <input type="number" name="cedula" 
-                                                    className="mb-3 input-app" placeholder="Cédula" 
-                                                    onChange={(e) => setCode(e.target.value) } required />
-
-                                                <button className="w-100 btn-signin" type="submit">Buscar</button>
-                                            </form>
+                                    <div className="row options">
+                                        <div className="col-12 col-lg-9 col-md-9 col-8 mx-auto">
+                                            <div className="metodos-registro">
+                                                <div className="btn-metodos my-4" onClick={()=> setIsFound(3)} >Correo electronico</div>
+                                                <div className="btn-metodos" onClick={()=> setIsFound(1)}>Cédula</div>
+                                            </div>
                                         </div>
                                     </div>
                                 )
@@ -137,6 +134,27 @@ export const SignupScreen = () => {
 
                             {
                                 isfound === 1 && 
+                                (
+                                    <div className="row mt-5">
+                                        <div className="col-12 col-lg-9 col-md-9 col-8 mx-auto">
+                                            <form onSubmit={findCedula}> 
+                                                <input type="number" name="cedula" 
+                                                    className="mb-3 input-app" placeholder="Cédula" autoComplete="new-password" 
+                                                    onChange={(e) => setCode(e.target.value) } required />
+
+                                                <button className="w-100 btn-signin" type="submit">Buscar</button>
+                                            </form>
+                                            
+                                            <div className="form-group center mt-3">
+                                                <div className="back-cedula" onClick={()=> setIsFound(0)}>Regresar</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+
+                            {
+                                isfound === 2 && 
                                 (
                                     data.map((item, index) => {
                                         return (
@@ -156,7 +174,7 @@ export const SignupScreen = () => {
                             }
 
                             {
-                                isfound === 2 &&
+                                isfound === 3 &&
                                 (
                                     <div className="step-2 mt-5">
                                         <div className="form-register">
@@ -185,9 +203,12 @@ export const SignupScreen = () => {
                                                 <button className="w-100 btn-signin" type="submit">Aceptar</button>
 
                                                 <div className="row text-center my-3">
-                                                    {/* <a href="https://www.merz.com/mx/aviso-de-privacidad/" target="_Blank" className="terminos">Política de privacidad</a> */}
+                                                    <a href="https://www.merz.com/mx/aviso-de-privacidad/" target="_Blank" rel="noreferrer" className="terminos">Política de privacidad</a>
                                                 </div>
                                             </form>
+                                            <div className="form-group center mt-3">
+                                                <div className="back-cedula" onClick={()=> setIsFound(0)}>Regresar</div>
+                                            </div>
                                         </div>
                                     </div>
                                 )
